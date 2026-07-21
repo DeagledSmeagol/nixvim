@@ -5,17 +5,8 @@
   ];
 
   extraConfigLua = ''
-    require("telescope").load_extension("lazyjj")
+    require("lazyjj").setup{{
+      mapping = '<leader>jj'
+      }}
   '';
-
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>jj";
-      action = "<cmd>LazyJJ<CR>";
-      options = {
-        desc = "LazyJJ (root dir)";
-      };
-    }
-  ];
 }
