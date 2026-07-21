@@ -4,12 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
   outputs =
@@ -42,10 +38,6 @@
           nixvimModule = {
             inherit pkgs;
             module = import ./config; # import the module directly
-            # You can use `extraSpecialArgs` to pass additional arguments to your module files
-            extraSpecialArgs = {
-              # inherit (inputs) foo;
-            };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
