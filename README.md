@@ -11,7 +11,7 @@ You can use this flake as an input:
 ```nix
 {
     inputs = {
-        nixvim.url = "github:dc-tec/nixvim"
+        nixvim.url = "github:DeagledSmeagol/nixvim"
     };
 }
 ```
@@ -50,7 +50,6 @@ home-manager.users.<user>.home.packages = [
 ### Completion
 
 - `cmp.nix`: Configures the cmp completion framework.
-- `cmp-copilot.nix`: Adds GitHub Copilot support to cmp.
 - `lspkind.nix`: Adds icons to lsp completion items.
 - `autopairs.nix`: Adds the autopairs plugin.
 - `schemastore.nix`: Adds the schemastore plugin for JSON and YAML schemas.
@@ -67,7 +66,6 @@ home-manager.users.<user>.home.packages = [
 - `illuminate.nix`: Configures the Illuminate plugin for highlighting other uses of the current word under the cursor.
 - `indent-blankline.nix`: Configures the Indent Blankline plugin for displaying indentation levels.
 - `todo-comments.nix`: Configures the Todo Comments plugin for highlighting TODO comments.
-- `copilot-chat.nix`: Configures the Copilot Chat plugin for interacting with GitHub Copilot.
 - `navic.nix`: Configures the Navic plugin, shows the current code context.
 
 ### UI Plugins
@@ -85,6 +83,7 @@ home-manager.users.<user>.home.packages = [
 ### Git
 
 - `lazygit.nix`: Configures the LazyGit plugin for Git integration.
+- `lazyjj.nix` : Configures the LazyJJ plugin for Jujutsu integration.
 - `gitsigns.nix`: Configures the GitSigns plugin for displaying Git diff information.
 
 ### Utils
@@ -103,5 +102,6 @@ Please refer to the individual `.nix` files for more detailed configuration info
 
 This configuration has taken inspiration from the following contributors.
 
+- [dc-tec](https://github.com/dc-tec/nixvim)
 - [Elythh](https://github.com/elythh/nixvim)
 - [MikaelFangel](https://github.com/MikaelFangel/nixvim-config)
