@@ -1,8 +1,5 @@
 {
   plugins = {
-    cmp-emoji = {
-      enable = true;
-    };
     cmp = {
       enable = true;
       settings = {
@@ -26,9 +23,8 @@
           ];
         };
         sources = [
-          { name = "git"; }
-          { name = "nvim_lsp"; }
-          { name = "emoji"; }
+          {name = "git";}
+          {name = "nvim_lsp";}
           {
             name = "buffer"; # text within current buffer
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
