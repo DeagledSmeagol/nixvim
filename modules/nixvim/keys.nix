@@ -380,6 +380,15 @@
           desc = "Previous quickfix";
         };
       }
+      {
+        mode = "n";
+        key = "q";
+        action = "<NOP>";
+        options = {
+          desc = "Disable Macros";
+        };
+      }
+
     ];
     extraConfigLua = ''
       function ToggleLineNumber()
