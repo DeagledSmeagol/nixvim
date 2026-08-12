@@ -1,7 +1,7 @@
 {
   plugins.gitlinker = {
     enable = true;
-    callbacks = {
+    settings.callbacks = {
       "github.com" = "get_github_type_url";
       "gitlab.dnm.radiofrance.fr" = "get_github_type_url";
     };
