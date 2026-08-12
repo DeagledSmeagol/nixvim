@@ -8,7 +8,7 @@
     ./dashboard.nix
     ./git.nix
     ./indent.nix
-    #./image.nix
+    ./image.nix
     ./lazygit.nix
     ./notifier.nix
     ./picker.nix
