@@ -7,6 +7,12 @@ let
   colors = import ../colorscheme/colors/${config.theme}.nix { };
 in
 {
+
+  extraPackages = [
+    pkgs.wordnet # docs
+    pkgs.glab # Gitlab integration
+  ];
+
   extraPlugins = with pkgs.vimPlugins; [
     blink-cmp-copilot
     blink-ripgrep-nvim
