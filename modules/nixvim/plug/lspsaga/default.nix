@@ -1,4 +1,7 @@
-{
+{ pkgs, ... }: {
+  extraPackages = [
+    pkgs.tree-sitter
+  ];
   plugins.lspsaga = {
     enable = true;
     settings = {

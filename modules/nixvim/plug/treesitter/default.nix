@@ -1,5 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   filetype.extension.liq = "liquidsoap";
+
+  extraPackages = [
+    pkgs.tree-sitter
+  ];
 
   plugins.treesitter = {
     enable = true;
