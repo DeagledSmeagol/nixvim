@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   plugins = {
     lint = {
       enable = true;
@@ -12,20 +11,22 @@
       lazyLoad.settings.event = "DeferredUIEnter";
 
       lintersByFt = {
-        bash = [ "shellcheck" ];
-        fish = [ "fish" ];
-        go = [ "golangcilint" ];
-        json = [ "jsonlint" ];
-        lua = [ "luacheck" ];
-        markdown = [ "markdownlint" ];
-        nix = [
-          "deadnix"
-          "nix"
-        ] ++ lib.optionals (!config.plugins.lsp.servers.statix.enable) [ "statix" ];
-        python = [ "pylint" ];
-        sh = [ "shellcheck" ];
-        terraform = [ "tflint" ];
-        yaml = [ "yamllint" ];
+        bash = ["shellcheck"];
+        fish = ["fish"];
+        go = ["golangcilint"];
+        json = ["jsonlint"];
+        lua = ["luacheck"];
+        markdown = ["markdownlint"];
+        nix =
+          [
+            "deadnix"
+            "nix"
+          ]
+          ++ lib.optionals (!config.plugins.lsp.servers.statix.enable) ["statix"];
+        python = ["pylint"];
+        sh = ["shellcheck"];
+        terraform = ["tflint"];
+        yaml = ["yamllint"];
       };
 
       linters = {
@@ -41,9 +42,9 @@
         golangcilint = {
           cmd = lib.getExe pkgs.golangci-lint;
         };
-        jsonlint = {
-          cmd = lib.getExe pkgs.nodePackages.jsonlint;
-        };
+        #jsonlint = {
+        #  cmd = lib.getExe pkgs.nodePackages.jsonlint;
+        #};
         luacheck = {
           cmd = lib.getExe pkgs.luaPackages.luacheck;
         };
