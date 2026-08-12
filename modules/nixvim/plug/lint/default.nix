@@ -63,9 +63,9 @@
         statix = {
           cmd = lib.getExe pkgs.statix;
         };
-        terraform = {
-          cmd = lib.getExe pkgs.tflint;
-        };
+        #terraform = {
+        #  cmd = lib.getExe pkgs.tflint;
+        #};
         yamllint = {
           cmd = lib.getExe pkgs.yamllint;
         };
