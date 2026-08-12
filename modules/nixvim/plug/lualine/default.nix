@@ -1,8 +1,6 @@
-{ config, ... }:
-let
-  colors = import ../colorscheme/colors/${config.theme}.nix { };
-in
-{
+{config, ...}: let
+  colors = import ../colorscheme/colors/${config.theme}.nix {};
+in {
   plugins.lualine = {
     enable = true;
     lazyLoad.settings.event = "BufEnter";
@@ -74,7 +72,7 @@ in
                 function()
                     local msg = ""
                     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-                    local clients = vim.lsp.get_active_clients()
+                    local clients = vim.lsp.get_clients()
                     if next(clients) == nil then
                         return msg
                     end
@@ -101,9 +99,9 @@ in
             separator.right = "";
           }
         ];
-        lualine_c = [ "" ];
-        lualine_x = [ "" ];
-        lualine_y = [ "" ];
+        lualine_c = [""];
+        lualine_x = [""];
+        lualine_y = [""];
         lualine_z = [
           {
             __unkeyed = "diagnostic";
