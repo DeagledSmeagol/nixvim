@@ -2,8 +2,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   plugins = {
     lsp-format = {
       enable = true;
@@ -20,23 +19,21 @@
         };
         nixd = {
           enable = true;
-          settings =
-            let
-              flake = ''(builtins.getFlake "github:elythh/flake)""'';
-              flakeNixvim = ''(builtins.getFlake "github:elythh/nixvim)""'';
-            in
-            {
-              nixpkgs = {
-                expr = "import ${flake}.inputs.nixpkgs { }";
-              };
-              formatting = {
-                command = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
-              };
-              options = {
-                nixos.expr = ''${flake}.nixosConfigurations.grovetender.options'';
-                nixvim.expr = ''${flakeNixvim}.packages.${pkgs.system}.default.options'';
-              };
+          settings = let
+            flake = ''(builtins.getFlake "github:elythh/flake)""'';
+            flakeNixvim = ''(builtins.getFlake "github:elythh/nixvim)""'';
+          in {
+            nixpkgs = {
+              expr = "import ${flake}.inputs.nixpkgs { }";
             };
+            formatting = {
+              command = ["${lib.getExe pkgs.nixfmt}"];
+            };
+            options = {
+              nixos.expr = ''${flake}.nixosConfigurations.grovetender.options'';
+              nixvim.expr = ''${flakeNixvim}.packages.${pkgs.stdenv.hostPlatform.system}.default.options'';
+            };
+          };
         };
         markdown_oxide = {
           enable = true;
