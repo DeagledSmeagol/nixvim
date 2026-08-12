@@ -1,8 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   config = {
     performance = {
       byteCompileLua = {
-        enable = true;
+        enable = false;
         nvimRuntime = true;
         configs = true;
         plugins = true;
