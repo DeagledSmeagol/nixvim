@@ -1,10 +1,13 @@
 {
+  config,
   pkgs,
   lib,
   ...
 }:
 let
-  nixos-svg-content = ''
+  colors = import ../colorscheme/colors/${config.theme}.nix { };
+
+  nixos-svg-content = with colors; ''
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1160 -1000 2320 2000">
             <defs>
               <polygon
@@ -13,22 +16,22 @@ let
               />
             </defs>
 
-            <use href="#flake" fill="#9e0000"
+            <use href="#flake" fill="${base08}"
               transform="translate(-320 554) rotate(0 320 -554)"/>
 
-            <use href="#flake" fill="#dc5500"
+            <use href="#flake" fill="${base09}"
               transform="translate(-320 554) rotate(60 320 -554)"/>
 
-            <use href="#flake" fill="#db9917"
+            <use href="#flake" fill="${base0A}"
               transform="translate(-320 554) rotate(120 320 -554)"/>
 
-            <use href="#flake" fill="#007f2d"
+            <use href="#flake" fill="${base0B}"
               transform="translate(-320 554) rotate(180 320 -554)"/>
 
-            <use href="#flake" fill="#0270a8"
+            <use href="#flake" fill="${base0D}"
               transform="translate(-320 554) rotate(240 320 -554)"/>
 
-            <use href="#flake" fill="#452397"
+            <use href="#flake" fill="${base0E}"
               transform="translate(-320 554) rotate(300 320 -554)"/>
           </svg>
   '';
